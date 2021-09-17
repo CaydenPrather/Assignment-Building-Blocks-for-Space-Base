@@ -1,42 +1,33 @@
-// creates function called play
+// creates function play
 function play() {
-    // assigns variables for our dice
-    var die1 = 5
-    var die2 = 2
-    // the sum is equal to the value of die1 + die2
-    var sum = die1+die2
-    // prints what is in quotations and the value of die1
-    document.write("Die 1 = " + die1)
-    // line break (separates lines)
-    document.write("<br/>")
-    // prints what is in quotations and the value of die2
-    document.write("Die 2 = " + die2)
-    // line break (separates lines)
-    document.write("<br/>")
-    // prints what is in quotations and the sum of the dice
-    document.write("Sum = " + sum)
-    // line break (separates lines)
-    document.write("<br/>")
-    // if the sum is exactly equal to 7 or exactly equal to 11
-    if (sum == 7 || sum == 11)
-    // print what is in quotations
-    { document.write("CRAPS - you lose")
-    // liine break (separates lines)
-    document.write("<br/>")
-    }
-    // otherwise if die1 exactly equals die2 AND the remainder of die1/2 is exactly equal to 0 
-    else if (die1== die2 && die1%2 == 0)
-    {
-    // print what is in quotations
-    document.write("DOUBLES - you win")
-    // line break (separates lines)
-    document.write("<br/>")
-    }
+ // defines variables to be used
+    var die1 = Math.floor(Math.random() * 6) + 1;
+    var die2 = Math.floor(Math.random() * 6) + 1;
     
+    var sum = die1+die2;
+ // prints what is in qutoations plus the value of variable
+    document.getElementById("die1").innerHTML = "Die 1 = " + die1;
+ // prints what is in qutoations plus the value of variable
+    document.getElementById("die2").innerHTML = "Die 2 = " + die2;
+ // prints what is in qutoations plus the value of variable
+    document.getElementById("sum").innerHTML = "Sum = " + sum;
+// if sum is equal to 7 or 11
+    if (sum == 7 || sum == 11) {
+// prints what is in quotations
+    document.getElementById("winLose").innerHTML = "You Win!";
     }
-    // print what is in quotations 
-    document.write("Simple Craps")
-    // line break (separates lines)
-    document.write("<br/>")
-    // invokes function play()
+// otherwise if die1 equals die2 and the remainder of die 1 equals 0
+    else if (die1 == die2 && die1%2 == 0) {
+// print what is in quotations
+    document.getElementById("winLose").innerHTML = "DOUBLES - you win";
+    }
+    else if (sum ==2 || sum == 3 || sum == 12) {
+        document.getElementById("winLose").innerHTML = "Craps - You Lose";
+    }
+}
+// invokes function
     play()
+// reloads webpage, which reruns code
+function replay(){
+    window.location.reload();
+}
