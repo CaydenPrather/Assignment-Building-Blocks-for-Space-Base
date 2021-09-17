@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Craps</title>
 </head>
-<body>
+<body style="background-color:cadetblue;">
     <!-- header -->
-    <h1>Welcome to my online Craps game!</h1>
+    <h1 style="text-align: center;">Welcome to my online Craps game!</h1>
     <!-- smaller header -->
     <h3>Rules:</h3>
     <!-- paragraph explaining what Craps is, and the basic rules of how to win -->
     <p> Craps is a dice game in which players bet on the outcomes of a pair of dice. Players can wager money against each other or against a bank.</p>
     <p>On your first roll, if you roll a 7 or 11, you win. Alternatively, if you roll a 2, 3, or 12 on your first roll, you lose. </p>
     <!-- table with separate rows to print the outcomes of the roles, this helps it look cleaner -->
-    <table>
+    <table style="margin-left: auto;margin-right: auto;">
         <tr>
             <td id="die1"> </td>
         </tr>
@@ -28,9 +28,12 @@
         <tr>
             <td id="winLose"></td>
         </tr>
+        <tr>
+            <!-- button to reload page which allows the user to replay -->
+            <td><button onclick="replay()"> Retry</button></td>
+        </tr>
     </table>
     <!-- button to reload page which allows the user to replay -->
-    <button onclick="replay()"> Retry </button>
     <!-- links the js code to the page -->
     <script src = "code.js"></script>
 </body>
